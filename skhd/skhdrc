@@ -4,11 +4,11 @@ alt - k : yabai -m window --focus north
 alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east
 
-# Left half (float + snap)
-alt - a : yabai -m window --toggle float && yabai -m window --grid 1:2:0:0:1:1
+# Fill left half
+alt - a : yabai -m window --warp west; yabai -m window --toggle zoom-parent
 
-# Right half (float + snap)
-alt - s : yabai -m window --toggle float && yabai -m window --grid 1:2:1:0:1:1
+# Fill right half
+alt - s : yabai -m window --warp east; yabai -m window --toggle zoom-parent
 
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270
