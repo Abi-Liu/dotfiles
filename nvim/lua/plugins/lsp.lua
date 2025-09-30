@@ -48,7 +48,9 @@ return {
 				nmap("[d", vim.diagnostic.goto_prev, "Prev Diagnostic")
 				nmap("]d", vim.diagnostic.goto_next, "Next Diagnostic")
 				nmap("<leader>e", vim.diagnostic.open_float, "Line Diagnostics")
-				nmap("<leader>fm", function() vim.lsp.buf.format({ async = true }) end, "Format Buffer")
+				-- nmap("<leader>fm", function() 
+				-- 	require(conform).format({async = true, lsp_fallback = true})
+				-- end , "Format Buffer")
 
 				-- Inlay hints if the server supports them (Neovim 0.10+)
 				if client.server_capabilities.inlayHintProvider then
@@ -128,6 +130,7 @@ return {
 					for name, _ in pairs(tbl) do table.insert(keys, name) end
 					table.insert(keys, "java-test")
 					table.insert(keys, "java-debug-adapter")
+					table.insert(keys, "google-java-format")
 					return keys
 				end)(servers),
 				automatic_installation = true,
